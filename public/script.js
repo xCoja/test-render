@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('/api/leaderboard')
+    fetch('https://leaderboard-render.onrender.com/api/leaderboard')
     .then(response => response.json())
     .then(data => {
         const leaderboard = data.referrals;
