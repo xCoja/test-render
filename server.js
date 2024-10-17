@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors'; // Import CORS middleware
 import fetch from 'node-fetch';
 import fs from 'fs';
 import path from 'path';
@@ -17,6 +18,13 @@ const MIN_TIME = 1728935622359; // October 15, 2024, at 00:00 UTC
 const MAX_TIME = 1729886022000; // October 25, 2024, at 00:00 UTC
 
 const CACHE_DURATION = 15 * 60 * 1000; // 15 minutes in milliseconds
+
+// Enable CORS for all routes
+app.use(cors({
+    origin: '*', // Allow all origins (for security, you can specify your Netlify URL here)
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type, Authorization'
+}));
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
