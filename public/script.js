@@ -51,10 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="leader-name">${user.displayName}</div>
                         <div class="leader-wagered">WAGERED:</div>
                         <div class="leader-amount">
-                            <img src="rain-coin.svg" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;">
+                            <img src="chicken-coin.svg" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;">
                             ${user.wagerAmount ? user.wagerAmount.toFixed(2).split('.')[0] : '0'}<span style="opacity: .5;">.${user.wagerAmount ? user.wagerAmount.toFixed(2).split('.')[1] : '00'}</span>
                         </div>
-                        <div class="leader-points"><img src="rain-coin.svg" style="max-width: 25px; vertical-align: middle; margin-bottom: 5px;">${rank === 1 ? 135 : rank === 2 ? 75 : 50}</div>
+                        <div class="leader-points"><img src="chicken-coin.svg" style="max-width: 25px; vertical-align: middle; margin-bottom: 5px;">${rank === 1 ? 135 : rank === 2 ? 75 : 50}</div>
                     </div>
                 `;
 
@@ -80,12 +80,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                     <div class="cell">
                         <div class="wagered">
-                            <img src="rain-coin.svg" style="max-width:15px;margin-right: 5px">
+                            <img src="chicken-coin.svg" style="max-width:15px;margin-right: 5px">
                             ${wageredParts[0]}<span style="opacity: .5;">.${wageredParts[1]}</span>
                         </div>
                     </div>
                     <div class="cell">
-                        <div class="prize"><img src="rain-coin.svg" style="max-width:20px;margin-right: 5px">0</div>
+                        <div class="prize"><img src="chicken-coin.svg" style="max-width:20px;margin-right: 5px">0</div>
                     </div>
                 `;
 
