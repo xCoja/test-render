@@ -1184,6 +1184,23 @@ table img {
     .code {
         font-size: 24px;
     }
+
+    
+
+    .first-card {
+        order: 2; /* Left side */
+    }
+
+    .second-card {
+        order: 1; /* Middle - First user */
+        margin-bottom: -50px;
+    }
+
+    .third-card {
+        order: 3; /* Right side */
+    }
+
+    
 }
 
 @media (max-width: 1000px)
@@ -1420,7 +1437,7 @@ table img {
     .second-card {
         transform: perspective(880px) rotateY(0deg) scale(1.0) rotateX(0deg);
         
-        display: none;
+       
         
     }
     .fourth-card {
