@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { 
     fetch('https://leaderboard-render.onrender.com/api/leaderboard')
     .then(response => response.json())
     .then(data => {
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <img src="chicken-coin.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;">
                             ${user.wagerAmount ? user.wagerAmount.toFixed(2).split('.')[0] : '0'}<span style="opacity: .5;">.${user.wagerAmount ? user.wagerAmount.toFixed(2).split('.')[1] : '00'}</span>
                         </div>
-                        <div class="leader-points"><img src="chicken-coin.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 5px;">${rank === 1 ? 135 : rank === 2 ? 75 : 50}</div>
+                        <div class="leader-points"><img src="chicken-coin.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 5px;">${rank === 1 ? 400 : rank === 2 ? 200 : 100}</div>
                     </div>
                 `;
 
@@ -64,17 +64,24 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Loop through the rest of the users and create leaderboard rows
+        // Loop through the rest of the users and assign different prizes for ranks 4 to 10
         leaderboard.slice(3).forEach((user, index) => {
             if (user && user.imageUrl && user.displayName) {
                 const row = document.createElement("div");
                 row.classList.add("leaderboard-row");
 
                 const wageredParts = user.wagerAmount ? user.wagerAmount.toFixed(2).split('.') : ['0', '00'];
+                const rank = index + 4; // Ranks start at 4
+
+                // Define prizes for ranks 4 to 10
+                let prize = 0;
+                if (rank === 4) prize = 50;
+                else if (rank === 5) prize = 25;
+                else if (rank >= 6 && rank <= 10) prize = 5;
 
                 row.innerHTML = `
                     <div class="cell rank-cell">
-                        <span class="rank">#${index + 4}</span>
+                        <span class="rank">#${rank}</span>
                         <img src="${user.imageUrl}" class="avatar-img" alt="Avatar of ${user.displayName}">
                         <span class="name">${user.displayName}</span>
                     </div>
@@ -85,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                     </div>
                     <div class="cell">
-                        <div class="prize"><img src="chicken-coin.png" style="max-width:20px;margin-right: 5px">0</div>
+                        <div class="prize"><img src="chicken-coin.png" style="max-width:20px;margin-right: 5px">${prize}</div>
                     </div>
                 `;
 
