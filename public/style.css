@@ -700,10 +700,6 @@ table img {
     margin-bottom: -10px;
 }
 
-.second-card:hover {
-    transform: perspective(880px) translateY(-90px) rotateX(0deg);
-    transition: 0.3s ease;
-}
 
 .third-card {
     transform: perspective(880px) rotateY(-22deg) scale(1.0) rotateX(9deg);
@@ -1205,7 +1201,7 @@ table img {
     
     
     .second-card {
-        transform: perspective(880px) rotateY(0deg) scale(1.0) rotateX(0deg);
+        transform: perspective(880px) rotateY(0deg) scale(1.0) rotateX(0deg) !important;
         
        
     }
