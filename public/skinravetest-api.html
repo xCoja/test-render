@@ -10,7 +10,7 @@
     <div id="leaderboard"></div>
 
     <script>
-        fetch('/.netlify/functions/skinraveLeaderboard')
+        fetch('netlify/functions/skinraveLeaderboard')
             .then(response => response.json())
             .then(data => {
                 const leaderboardDiv = document.getElementById('leaderboard');
