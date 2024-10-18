@@ -1,12 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Fetch data directly from SkinRave API
-    fetch('https://api.skinrave.gg/affiliates/applicants?skip=0&take=25&sort=wagered&order=DESC&userId=95902&from=2024-10-12T14:00:00Z&to=2024-10-26T14:00:00Z')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
+    fetch('/.netlify/functions/skinraveLeaderboard')
+    .then(response => response.json())
     .then(data => {
         const leaderboard = data.referrals;
 
@@ -18,60 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
             return a.acquireTime - b.acquireTime; // Sort by acquireTime (oldest first)
         });
 
-        const topThreeSection = document.querySelector(".top-three");
         const leaderboardBody = document.querySelector(".leaderboard-body");
-
         leaderboardBody.innerHTML = ""; // Clear previous content
-        topThreeSection.innerHTML = ""; // Clear previous content
 
-        // Check if there are enough users to show in top 3
-        const topThreeUsers = leaderboard.slice(0, 3); // Get up to 3 users
-
-        // Create the cards for Rank 2, Rank 1, and Rank 3 in that specific order
-        const displayOrder = [1, 0, 2]; // Middle: Rank 1, Left: Rank 2, Right: Rank 3
-
-        displayOrder.forEach((rankIndex, displayIndex) => {
-            const user = topThreeUsers[rankIndex];
-            if (user && user.imageUrl && user.displayName) {
-                const topUserCard = document.createElement("div");
-
-                if (displayIndex === 0) {
-                    topUserCard.classList.add("card", "first-card");  // Rank 2 user (left side)
-                } else if (displayIndex === 1) {
-                    topUserCard.classList.add("card", "second-card");  // Rank 1 user (middle)
-                } else if (displayIndex === 2) {
-                    topUserCard.classList.add("card", "third-card");  // Rank 3 user (right side)
-                }
-
-                const rank = rankIndex === 0 ? 1 : (rankIndex === 1 ? 2 : 3);
-
-                // Populate top user cards
-                topUserCard.innerHTML = `
-                    <div class="card-header">
-                        <span class="badge">${rank === 1 ? "1st" : rank === 2 ? "2nd" : "3rd"}</span>
-                        <div class="avatar-container avatar-${rank === 1 ? "1st" : rank === 2 ? "2nd" : "3rd"}">
-                            <img src="${user.imageUrl}" alt="leader">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="leader-name">${user.displayName}</div>
-                        <div class="leader-wagered">WAGERED:</div>
-                        <div class="leader-amount">
-                            <img src="chicken-coin.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;">
-                            ${user.wagerAmount ? user.wagerAmount.toFixed(2).split('.')[0] : '0'}<span style="opacity: .5;">.${user.wagerAmount ? user.wagerAmount.toFixed(2).split('.')[1] : '00'}</span>
-                        </div>
-                        <div class="leader-points"><img src="chicken-coin.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 5px;">${rank === 1 ? 400 : rank === 2 ? 200 : 100}</div>
-                    </div>
-                `;
-
-                topThreeSection.appendChild(topUserCard);
-            } else {
-                console.error("Missing user data for top 3 users.");
-            }
-        });
-
-        // Loop through the rest of the users and create leaderboard rows
-        leaderboard.slice(3).forEach((user, index) => {
+        // Loop through the users and create leaderboard rows
+        leaderboard.forEach((user, index) => {
             if (user && user.imageUrl && user.displayName) {
                 const row = document.createElement("div");
                 row.classList.add("leaderboard-row");
@@ -80,18 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 row.innerHTML = `
                     <div class="cell rank-cell">
-                        <span class="rank">#${index + 4}</span>
+                        <span class="rank">#${index + 1}</span>
                         <img src="${user.imageUrl}" class="avatar-img" alt="Avatar of ${user.displayName}">
                         <span class="name">${user.displayName}</span>
                     </div>
                     <div class="cell">
                         <div class="wagered">
-                            <img src="chicken-coin.png" style="max-width:15px;margin-right: 5px">
+                            <img src="rain-coin.svg" style="max-width:15px;margin-right: 5px">
                             ${wageredParts[0]}<span style="opacity: .5;">.${wageredParts[1]}</span>
                         </div>
                     </div>
                     <div class="cell">
-                        <div class="prize"><img src="chicken-coin.png" style="max-width:20px;margin-right: 5px">0</div>
+                        <div class="prize">0</div>
                     </div>
                 `;
 
