@@ -1776,7 +1776,7 @@ abbr {
     vertical-align: middle;
 }
 .diamond-icon2 {
-    transform: translateY(1px) rotate(15deg); /* Adjust '3px' as needed */
+    transform: translateY(1px) rotate(15deg); 
     
 }
 
@@ -1827,9 +1827,9 @@ abbr {
     gap: 30px;
     justify-content: center;
     align-items: center;
-    margin-top: 150px; /* Added margin-top as you requested */
+    margin-top: 150px; 
     margin-bottom: 0;
-    position: relative; /* This is needed for the line positioning */
+    position: relative; 
 }
 
 /* Full paths for specific images */
@@ -1879,7 +1879,7 @@ abbr {
     background: #181818;
     border-radius: 10px;
     max-width: 600px;
-    height: 80vh; /* Fixed height for the popup */
+    height: 80vh; 
     padding: 20px;
     border: 1px solid #444;
     width: 100%;
@@ -1887,7 +1887,7 @@ abbr {
     text-align: center;
     font-family: 'Poppins', sans-serif;
     color: #fff;
-    position: relative; /* Ensure navigation is placed properly */
+    position: relative; 
 }
 
 /* Title */
@@ -1900,8 +1900,8 @@ abbr {
 /* Leaderboard Container */
 .winners-leaderboard {
     margin-top: 20px;
-    height: calc(80vh - 120px); /* Adjust height for leaderboard */
-    overflow-y: auto; /* Enable scrolling */
+    height: calc(80vh - 120px); 
+    overflow-y: auto; 
 }
 
 /* Cards */
@@ -1997,16 +1997,16 @@ abbr {
 .navigation {
     text-align: center;
     position: absolute;
-    bottom: 10px; /* Always stick to the bottom */
+    bottom: 10px; 
     left: 50%;
     transform: translateX(-50%);
 }
 
 .nav-item {
     cursor: pointer;
-    padding: 5px 15px; /* Reduce padding for a more balanced size */
+    padding: 5px 15px; 
     text-align: center;
-    margin: 0 8px; /* Keep some space between the buttons */
+    margin: 0 8px; 
     font-weight: bold;
     border: 2px solid orange;
     border-radius: 5px;
