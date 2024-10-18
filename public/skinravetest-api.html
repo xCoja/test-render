@@ -11,38 +11,77 @@
             color: #333;
             padding: 20px;
         }
-        #leaderboard {
-            white-space: pre-wrap; /* Ensures the JSON is formatted nicely */
+
+        .leaderboard-container {
+            max-width: 800px;
+            margin: 0 auto;
             background-color: #fff;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff0000;
+        }
+
+        .leaderboard-body, .top-three {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card-header img {
+            border-radius: 50%;
+            max-width: 100px;
+        }
+
+        .badge {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .leader-wagered, .leader-amount, .leader-points {
+            font-size: 1.1em;
+        }
+
+        .leaderboard-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .leaderboard-row .cell {
+            flex: 1;
         }
     </style>
 </head>
 <body>
-    <h1>SkinRave Leaderboard</h1>
-    <div id="leaderboard">Loading leaderboard data...</div>
 
-    <script>
-        // Fetch data from the Netlify function
-        fetch('/.netlify/functions/skinraveLeaderboard')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                const leaderboardDiv = document.getElementById('leaderboard');
-                // Format the JSON response nicely and display it
-                leaderboardDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
-            })
-            .catch(error => {
-                console.error('Error fetching leaderboard:', error);
-                const leaderboardDiv = document.getElementById('leaderboard');
-                leaderboardDiv.innerHTML = 'Error loading leaderboard. Please try again later.';
-            });
-    </script>
+    <div class="leaderboard-container">
+        <h1>SkinRave Leaderboard</h1>
+
+        <!-- Top 3 Users Section -->
+        <div class="top-three"></div>
+
+        <!-- Full Leaderboard Section -->
+        <div class="leaderboard-body">
+            <!-- Dynamic content will be inserted here -->
+        </div>
+    </div>
+
+    <!-- Include the JS logic here -->
+    <script src="script.js"></script>
 </body>
 </html>
