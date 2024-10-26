@@ -15,7 +15,7 @@ const __dirname = path.dirname(__filename);
 
 // Set the minTime and maxTime manually for your desired time range
 const MIN_TIME = 1728935622359; // October 15, 2024, at 00:00 UTC
-const MAX_TIME = 1729886022000; // October 25, 2024, at 00:00 UTC
+const MAX_TIME = 1730124000000; // October 25, 2024, at 00:00 UTC
 
 const CACHE_DURATION = 15 * 60 * 1000; // 15 minutes in milliseconds
 
