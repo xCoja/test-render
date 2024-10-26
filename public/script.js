@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch('https://leaderboard-render.onrender.com/api/leaderboard')
     .then(response => response.json())
     .then(data => {
-        const leaderboard = data.referrals;
+        let leaderboard = data.referrals;
 
         // Sort leaderboard by wagerAmount first, then by acquireTime if wagerAmount is zero
         leaderboard.sort((a, b) => {
@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             return a.acquireTime - b.acquireTime; // Sort by acquireTime (oldest first)
         });
+
+        // Limit to the top 10 users
+        leaderboard = leaderboard.slice(0, 10);
 
         const topThreeSection = document.querySelector(".top-three");
         const leaderboardBody = document.querySelector(".leaderboard-body");
