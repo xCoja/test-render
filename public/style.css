@@ -2254,3 +2254,10 @@ abbr {
     background-color: orange;
     color: white;
 }
+
+.dsl {
+    justify-content: center;
+    text-align: center;
+    color: #8b8989;
+    font-size: 14px;
+}
