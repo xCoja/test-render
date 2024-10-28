@@ -43,23 +43,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 const rank = rankIndex === 0 ? 1 : (rankIndex === 1 ? 2 : 3);
 
                 // Populate top user cards
-                topUserCard.innerHTML = `
-                    <div class="card-header">
-                        <span class="badge">${rank === 1 ? "1st" : rank === 2 ? "2nd" : "3rd"}</span>
-                        <div class="avatar-container avatar-${rank === 1 ? "1st" : rank === 2 ? "2nd" : "3rd"}">
-                            <img src="${user.imageUrl}" alt="leader">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="leader-name">${user.displayName}</div>
-                        <div class="leader-wagered">WAGERED:</div>
-                        <div class="leader-amount">
-                            <img src="chicken-coin.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;">
-                            ${user.wagerAmount ? user.wagerAmount.toFixed(2).split('.')[0] : '0'}<span style="opacity: .5;">.${user.wagerAmount ? user.wagerAmount.toFixed(2).split('.')[1] : '00'}</span>
-                        </div>
-                        <div class="leader-points"><img src="chicken-coin.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 5px;">${rank === 1 ? 400 : rank === 2 ? 200 : 100}</div>
-                    </div>
-                `;
+topUserCard.innerHTML = `
+<div class="card-header">
+    <span class="badge ${rank === 1 ? "badge-first" : rank === 2 ? "badge-second" : "badge-third"}">
+        ${rank === 1 ? "1st" : rank === 2 ? "2nd" : "3rd"}
+    </span>
+    <div class="avatar-container avatar-${rank === 1 ? "1st" : rank === 2 ? "2nd" : "3rd"}">
+        <img src="${user.imageUrl}" alt="leader">
+    </div>
+</div>
+<div class="card-body">
+    <div class="leader-name">${user.displayName}</div>
+    <div class="leader-wagered">WAGERED:</div>
+    <div class="leader-amount">
+        <img src="chicken-coin.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 2px;">
+        ${user.wagerAmount ? user.wagerAmount.toFixed(2).split('.')[0] : '0'}<span style="opacity: .5;">.${user.wagerAmount ? user.wagerAmount.toFixed(2).split('.')[1] : '00'}</span>
+    </div>
+    <div class="leader-points"><img src="chicken-coin.png" style="max-width: 25px; vertical-align: middle; margin-bottom: 5px;">${rank === 1 ? 400 : rank === 2 ? 200 : 100}</div>
+</div>
+`;
+
 
                 topThreeSection.appendChild(topUserCard);
             } else {

@@ -536,8 +536,6 @@ table img {
     top: -20px; 
     left: 50%;
     transform: translateX(-50%);
-    background: #101010;
-    color: rgb(247, 191, 39);
     padding: 5px 10px;
     border-radius: 50%;
     font-weight: bold;
@@ -548,13 +546,24 @@ table img {
     z-index: 2;
 }
 
-.card-header .badge .badge-second{
+/* Gold for 1st place */
+.card-header .badge-first {
+    background: #101010;
+    color: rgb(247, 191, 39);
+}
+
+/* Silver for 2nd place */
+.card-header .badge-second {
+    background: #101010;
     color: silver;
 }
 
-.card-header .badge .badge-third{
+/* Bronze for 3rd place */
+.card-header .badge-third {
+    background: #101010;
     color: #ad6303;
 }
+
 
 .card-header .badge i {
     font-size: 20px;
@@ -1399,6 +1408,24 @@ table img {
     }
 
 
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the images horizontally */
+    }
+
+    .image-container img#clashImage,
+    .image-container img#skinraveImage,
+    .image-container img#rainImage {
+        width: 150px !important;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        margin-bottom: 10px; /* Adds space between the images */
+    }
+
+    .line {
+        display: none; /* Hides the lines on mobile */
+    }
     
 }
 
@@ -1412,12 +1439,7 @@ table img {
         }
     }
 
-    .image-container img#clashImage,
-    .image-container img#skinraveImage {
-    width: 150px !important;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
+   
  .giving-away {
     font-size: 14px !important;
  }

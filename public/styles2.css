@@ -1183,6 +1183,25 @@ body, html {
         font-size: 2px;
     }
 
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the images horizontally */
+    }
+
+    .image-container img#clashImage,
+    .image-container img#skinraveImage,
+    .image-container img#rainImage {
+        width: 150px !important;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        margin-bottom: 10px; /* Adds space between the images */
+    }
+
+    .line {
+        display: none; /* Hides the lines on mobile */
+    }
+
 
     
 }
@@ -1197,12 +1216,7 @@ body, html {
         }
     }
 
-    .image-container img#clashImage,
-    .image-container img#skinraveImage {
-    width: 150px !important;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
+   
  .giving-away {
     font-size: 14px !important;
  }
