@@ -573,7 +573,9 @@ table img {
     margin-top: 20px;
 }
 
-
+.txtt {
+    color: rgb(224, 185, 11);
+}
 
 .card {
     background: #181818; 
