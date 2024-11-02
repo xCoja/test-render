@@ -1654,11 +1654,11 @@ abbr {
 }
 
 #kick .kick-img {
-    content: url('img/kick-footer.png');
+    content: url('kick-footer.png');
 }
 
 #kick:hover .kick-img {
-    content: url('img/kick-green.png');
+    content: url('kick-green.png');
 }
 
 
@@ -1894,7 +1894,8 @@ abbr {
 
 /* Full paths for specific images */
 .image-container img#clashImage,
-.image-container img#skinraveImage {
+.image-container img#skinraveImage,
+.image-container img#gambaImage {
     width: 200px;
     cursor: pointer;
     transition: opacity 0.3s ease;
