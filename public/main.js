@@ -1,6 +1,6 @@
 function countdown() {
     // Set the start time to yesterday at 4:00 PM CET, converted to UTC
-    var startTimeUTC = Date.UTC(2024, 9, 28, 14, 0, 0); // Adjusted to UTC: 2024-08-17 14:00:00 UTC
+    var startTimeUTC = Date.UTC(2024, 10, 11, 14, 0, 0); // Adjusted to UTC: 2024-08-17 14:00:00 UTC
 
     // Calculate the end time: 14 days after the start time
     var countDownDate = startTimeUTC + (14 * 24 * 60 * 60 * 1000); // 14 days in milliseconds
@@ -58,28 +58,52 @@ function createBubbles() {
 const showWinnersButton = document.querySelector('.show-winners');
 const popupOverlayWinners = document.getElementById('popup-overlay-winners');
 const popupCloseWinners = document.getElementById('popup-close-winners');
-const paginationButtons = document.querySelectorAll('.nav-item'); // Updated class selector for pagination buttons
-const sets = ['set4', 'set2', 'set1']; // Adjusted to reflect that set4 is first, then set2, and set1
-const dateElement = document.getElementById('popup-date');
+const set1 = document.getElementById('set1');
+const set2 = document.getElementById('set2');
+const nav1 = document.getElementById('nav1');
+const nav2 = document.getElementById('nav2');
+const popupDate = document.getElementById('popup-date');  // Get the popup date element
 
-// Show the popup when the "Show Winners" button is clicked
 showWinnersButton.addEventListener('click', (event) => {
     event.stopPropagation();
     popupOverlayWinners.style.display = 'flex';
+    set1.style.display = 'none'; 
+    set2.style.display = 'block'; 
+    nav1.classList.add('active'); 
+    nav2.classList.remove('active');
 
-    // Hide set1, set2, set3 and show set4 by default
-    document.getElementById('set1').style.display = 'none';
-    document.getElementById('set2').style.display = 'none';
-    document.getElementById('set3').style.display = 'none';
-    document.getElementById('set4').style.display = 'block'; // Set4 should be the first one to display
-
-    // Set the date for set4
-    dateElement.textContent = '2024-09-28'; // Adjust date to set4
-
-    // Set the correct active navigation button (nav1 now corresponds to set4)
-    paginationButtons.forEach(b => b.classList.remove('active'));
-    document.getElementById('nav1').classList.add('active'); // nav1 is linked to set4 now
 });
+
+popupCloseWinners.addEventListener('click', (event) => {
+    event.stopPropagation();
+    popupOverlayWinners.style.display = 'none';
+});
+
+popupOverlayWinners.addEventListener('click', (event) => {
+    if (event.target === popupOverlayWinners) {
+        popupOverlayWinners.style.display = 'none';
+    }
+});
+
+// Pagination between sets
+nav1.addEventListener('click', () => {
+    set1.style.display = 'none'; 
+    set2.style.display = 'block'; 
+    nav1.classList.add('active');  
+    nav2.classList.remove('active');
+    popupDate.textContent = '2024-11-11'; 
+});
+
+nav2.addEventListener('click', () => {
+    set1.style.display = 'block'; 
+    set2.style.display = 'none'; 
+    nav2.classList.add('active');  
+    nav1.classList.remove('active');
+
+    popupDate.textContent = '2024-10-28';  
+});
+
+
 
 
 const YOUTUBE_RSS_FEED = 'https://www.youtube.com/feeds/videos.xml?channel_id=UCxElbn4HsMP9hYoM_dYjX2g'; 

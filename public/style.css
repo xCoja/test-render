@@ -2015,7 +2015,10 @@ abbr {
     vertical-align: middle;
 }
 .diamond-icon2 {
-    transform: translateY(1px) rotate(15deg); /* Adjust '3px' as needed */
+    max-width:21px;
+    margin-right: 5px;
+    display: inline-block;
+    transform: translateY(4px);
     
 }
 
