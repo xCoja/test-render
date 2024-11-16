@@ -1855,6 +1855,12 @@ abbr {
     transition: opacity 0.3s ease;
 }
 
+.image-container img#daddySkinsImage {
+    width: 150px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
 
 
 
