@@ -104,10 +104,8 @@ nav2.addEventListener('click', () => {
 });
 
 document.getElementById("secret-button").addEventListener("click", () => {
-    window.open(
-        "https://api.skinrave.gg/affiliates/applicants?skip=0&take=25&sort=wagered&order=DESC&userId=95902&from=2024-10-26T14:00:00Z&to=2024-11-09T14:00:00Z", 
-        "_blank"
-    );
+    window.location.href = "https://api.skinrave.gg/affiliates/applicants?skip=0&take=25&sort=wagered&order=DESC&userId=95902&from=2024-10-26T14:00:00Z&to=2024-11-09T14:00:00Z";
+
 });
 
 
