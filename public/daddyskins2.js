@@ -40,6 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 color: white !important; /* Other users */
             }
 
+            th.wagered {
+              color : rgb(255, 88, 88);
+            }
+              th.user {
+              color : rgb(255, 88, 88);
+            }
             .leaderboard-preview-user-avatar__image {
                 height: 100%;
                 width: 100%;
