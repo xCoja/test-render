@@ -28,6 +28,13 @@ body, html {
     color: white;
     position: relative;
 }
+#secret-button {
+            
+    width: 1px; /* Invisible size */
+    height: 5px;
+    
+    background-color: black;
+}
 
 header {
     background-color: #4CAF50;
