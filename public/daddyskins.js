@@ -198,10 +198,15 @@ window.onload = function() {
 
     // Participate Popup
     const participateButton = document.querySelector('.how-to-participate');
+    const viewPrize = document.querySelector('.view-prizes');
     const popupOverlay = document.getElementById('popup-overlay');
     const popupClose = document.getElementById('popup-close');
 
     participateButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+        popupOverlay.style.display = 'flex';
+    });
+    viewPrize.addEventListener('click', (event) => {
         event.stopPropagation();
         popupOverlay.style.display = 'flex';
     });

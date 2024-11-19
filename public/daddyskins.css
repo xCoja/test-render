@@ -420,7 +420,36 @@ body, html {
     position: relative; 
 }
 
+.view-prizes {
+    position: absolute; /* Allow precise positioning */
+    left: 70%; /* Move to 70% of the screen width */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    text-align: center;
+    justify-content: center;
+    
 
+}
+
+.viewprize {
+    background:  rgb(255, 88, 88);
+    color: white;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 600;
+    font-family: "Poppins";
+    transition: 0.3s ease;
+}
+
+.viewprize:hover {
+    border: 2px solid rgb(255, 88, 88);
+    background: transparent;
+    color: white;
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
 .leader-name {
     font-size: 22px;
     font-weight: bold;
