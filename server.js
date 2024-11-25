@@ -1,5 +1,5 @@
 import express from 'express';
-import cors from 'cors'; // Import CORS middleware
+import cors from 'cors'; 
 import fetch from 'node-fetch';
 import fs from 'fs';
 import path from 'path';
@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 
 const app = express();
 const PORT = 3000;
-const API_KEY = '05381fe04025772964ce1fedc91b55d7'; // Your API key
+const API_KEY = '05381fe04025772964ce1fedc91b55d7'; 
 
 // Define __dirname manually since it's not available in ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -21,7 +21,7 @@ const CACHE_DURATION = 15 * 60 * 1000; // 15 minutes in milliseconds
 
 // Enable CORS for all routes
 app.use(cors({
-    origin: '*', // Allow all origins (for security, you can specify your Netlify URL here)
+    origin: '*', 
     methods: 'GET,POST,PUT,DELETE',
     allowedHeaders: 'Content-Type, Authorization'
 }));
