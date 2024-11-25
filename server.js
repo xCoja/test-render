@@ -14,8 +14,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Set the minTime and maxTime manually for your desired time range
-const MIN_TIME = 1731333600000; // November 11, 2024, at 00:00 UTC
-const MAX_TIME = 1732543200000; // November 25, 2024, at 00:00 UTC
+const MIN_TIME = 1732543200000; // November 25, 2024, at 14::00  UTC
+const MAX_TIME = 1733752800000; // December 09, 2024, at 14::00 UTC
 
 const CACHE_DURATION = 15 * 60 * 1000; // 15 minutes in milliseconds
 
