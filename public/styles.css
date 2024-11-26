@@ -1895,14 +1895,10 @@ abbr {
 /* Full paths for specific images */
 .image-container img#clashImage,
 .image-container img#skinraveImage,
-.image-container img#gambaImage {
-    width: 200px;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
-
+.image-container img#gambaImage,
+.image-container img#rainBetImage,
 .image-container img#daddySkinsImage {
-    width: 250px;
+    width: 200px;
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
