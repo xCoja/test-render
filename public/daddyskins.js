@@ -196,31 +196,47 @@ window.onload = function() {
     fetchYouTubeVideos();
     createBubbles();
 
-    // Participate Popup
-    const participateButton = document.querySelector('.how-to-participate');
-    const viewPrize = document.querySelector('.view-prizes');
-    const popupOverlay = document.getElementById('popup-overlay');
-    const popupClose = document.getElementById('popup-close');
+  // Participate Popup
+const participateButton = document.querySelector('.how-to-participate');
+const viewPrize = document.querySelector('.view-prizes');
+const popupOverlay = document.getElementById('popup-overlay');
+const popupOverlay2 = document.getElementById('popup-overlay-2');
+const popupClose = document.getElementById('popup-close');
 
-    participateButton.addEventListener('click', (event) => {
-        event.stopPropagation();
-        popupOverlay.style.display = 'flex';
-    });
-    viewPrize.addEventListener('click', (event) => {
-        event.stopPropagation();
-        popupOverlay.style.display = 'flex';
-    });
+// Event listener for the "How to Participate" button
+participateButton.addEventListener('click', (event) => {
+    event.stopPropagation();
+    popupOverlay.style.display = 'flex'; // Opens the "How to Participate" popup
+});
 
-    popupClose.addEventListener('click', (event) => {
-        event.stopPropagation();
+// Event listener for the "View Prizes" button
+viewPrize.addEventListener('click', (event) => {
+    event.stopPropagation();
+    popupOverlay2.style.display = 'flex'; // Opens the "View Prizes" popup
+});
+
+// Close popup when the close button is clicked
+popupClose.addEventListener('click', (event) => {
+    event.stopPropagation();
+    popupOverlay.style.display = 'none'; // Close "How to Participate" popup
+    popupOverlay2.style.display = 'none'; // Close "View Prizes" popup
+});
+
+// Close popup when clicking outside the popup content
+popupOverlay.addEventListener('click', (event) => {
+    if (event.target === popupOverlay) {
         popupOverlay.style.display = 'none';
-    });
+    }
+});
 
-    popupOverlay.addEventListener('click', (event) => {
-        if (event.target === popupOverlay) {
-            popupOverlay.style.display = 'none';
-        }
-    });
+popupOverlay2.addEventListener('click', (event) => {
+    if (event.target === popupOverlay2) {
+        popupOverlay2.style.display = 'none';
+    }
+});
+
+
+    
 
 // Close the popup when the close button is clicked
 popupCloseWinners.addEventListener('click', (event) => {
