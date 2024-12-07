@@ -63,11 +63,13 @@ const set2 = document.getElementById('set2');
 const set3 = document.getElementById('set3');
 const set4 = document.getElementById('set4');
 const set5 = document.getElementById('set5');
+const set6 = document.getElementById('set6');
 const nav1 = document.getElementById('nav1');
 const nav2 = document.getElementById('nav2');
 const nav3 = document.getElementById('nav3');
 const nav4 = document.getElementById('nav4');
 const nav5 = document.getElementById('nav5');
+const nav6 = document.getElementById('nav6');
 const popupDate = document.getElementById('popup-date');  // Get the popup date element
 
 showWinnersButton.addEventListener('click', (event) => {
@@ -77,12 +79,14 @@ showWinnersButton.addEventListener('click', (event) => {
     set2.style.display = 'none';  // Hide Set 2 by default
     set3.style.display = 'none';  // Hide Set 3 by default
     set4.style.display = 'none';  // Hide Set 3 by default
-    set5.style.display = 'block';
+    set5.style.display = 'none';
+    set6.style.display = 'block'
     nav1.classList.add('active');  // Set nav1 as active
     nav2.classList.remove('active');
     nav3.classList.remove('active');
     nav4.classList.remove('active');
     nav5.classList.remove('active')
+    nav6.classList.remove('active')
 });
 
 popupCloseWinners.addEventListener('click', (event) => {
@@ -102,68 +106,94 @@ nav1.addEventListener('click', () => {
     set2.style.display = 'none';  // Hide Set 2
     set3.style.display = 'none';
     set4.style.display = 'none';  // Hide Set 3
-    set5.style.display = 'block';
+    set5.style.display = 'none';
+    set6.style.display = 'block';
     nav1.classList.add('active');  // Set nav1 as active
     nav2.classList.remove('active');
     nav3.classList.remove('active');
     nav4.classList.remove('active');
     nav5.classList.remove('active');
-    popupDate.textContent = '2024-11-25';  // Set date for Set 1
+    nav6.classList.remove('active');
+    popupDate.textContent = '2024-12-7';  // Set date for Set 1
 });
 
 nav2.addEventListener('click', () => {
     set1.style.display = 'none';  // Hide Set 1
     set2.style.display = 'none'; // Show Set 2
     set3.style.display = 'none'; 
-    set4.style.display = 'block'; // Hide Set 3
-    set5.style.display = 'none';
+    set4.style.display = 'none'; // Hide Set 3
+    set5.style.display = 'block';
+    set6.style.display = 'none';
     nav2.classList.add('active');  // Set nav2 as active
     nav1.classList.remove('active');
     nav3.classList.remove('active');
     nav4.classList.remove('active');
     nav5.classList.remove('active');
-    popupDate.textContent = '2024-11-9';  // Set date for Set 2
+    nav6.classList.remove('active');
+    popupDate.textContent = '2024-11-25';  // Set date for Set 2
 });
 
 nav3.addEventListener('click', () => {
-    set1.style.display = 'block';  // Hide Set 1
+    set1.style.display = 'none';  // Hide Set 1
     set2.style.display = 'none';  // Hide Set 2
     set3.style.display = 'none';
-    set4.style.display = 'none'; // Show Set 3
+    set4.style.display = 'block'; // Show Set 3
     set5.style.display = 'none';
+    set6.style.display = 'none';
     nav3.classList.add('active');  // Set nav3 as active
     nav1.classList.remove('active');
     nav2.classList.remove('active');
     nav4.classList.remove('active');
     nav5.classList.remove('active');
-    popupDate.textContent = '2024-10-26';  // Set date for Set 3 (adjust the date as needed)
+    nav6.classList.remove('active');
+    popupDate.textContent = '2024-11-9';  // Set date for Set 3 (adjust the date as needed)
 });
 
 nav4.addEventListener('click', () => {
-    set1.style.display = 'none';  // Hide Set 1
-    set2.style.display = 'block';  // Hide Set 2
+    set1.style.display = 'block';  // Hide Set 1
+    set2.style.display = 'none';  // Hide Set 2
     set3.style.display = 'none';
     set4.style.display = 'none'; // Show Set 3
     set5.style.display = 'none';
+    set6.style.display = 'none';
     nav4.classList.add('active');  // Set nav3 as active
     nav1.classList.remove('active');
     nav2.classList.remove('active');
     nav3.classList.remove('active');
     nav5.classList.remove('active');
-    popupDate.textContent = '2024-10-12';  // Set date for Set 3 (adjust the date as needed)
+    nav6.classList.remove('active');
+    popupDate.textContent = '2024-10-26';  // Set date for Set 3 (adjust the date as needed)
 });
 
 nav5.addEventListener('click', () => {
     set1.style.display = 'none';  // Hide Set 1
-    set2.style.display = 'none';  // Hide Set 2
-    set3.style.display = 'block';
+    set2.style.display = 'block';  // Hide Set 2
+    set3.style.display = 'none';
     set4.style.display = 'none'; // Show Set 3
     set5.style.display = 'none';
+    set6.style.display = 'none';
     nav5.classList.add('active');  // Set nav3 as active
     nav1.classList.remove('active');
     nav2.classList.remove('active');
     nav3.classList.remove('active');
     nav4.classList.remove('active');
+    nav6.classList.remove('active');
+    popupDate.textContent = '2024-10-12';  // Set date for Set 3 (adjust the date as needed)
+});
+
+nav6.addEventListener('click', () => {
+    set1.style.display = 'none';  // Hide Set 1
+    set2.style.display = 'none';  // Hide Set 2
+    set3.style.display = 'block';
+    set4.style.display = 'none'; // Show Set 3
+    set5.style.display = 'none';
+    set6.style.display = 'none';
+    nav5.classList.add('active');  // Set nav3 as active
+    nav1.classList.remove('active');
+    nav2.classList.remove('active');
+    nav3.classList.remove('active');
+    nav4.classList.remove('active');
+    nav6.classList.remove('active');
     popupDate.textContent = '2024-09-28';  // Set date for Set 3 (adjust the date as needed)
 });
 
