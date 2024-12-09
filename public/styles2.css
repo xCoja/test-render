@@ -1851,12 +1851,12 @@ abbr {
 .image-container img#skinraveImage,
 .image-container img#gambaImage,
 .image-container img#rainBetImage,
-.image-container img#daddySkinsImage {
+.image-container img#daddySkinsImage,
+.image-container img#gamdomImage {
     width: 200px;
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
-
 
 /* Style when image is inactive */
 .image-container img.inactive {
