@@ -219,19 +219,10 @@ body, html {
 }
 /* CARDS - TOP 3 LEADERBOARD */
 
-.second-card {
-    position: relative;
-    animation: pumpAndGlow 3s infinite;
-    border-radius: 15px; 
-}
 
 
 
-.second-card {
-    position: relative;
-    animation: pumpAndGlow 3s infinite;
-    border-radius: 15px; 
-}
+
 
 
 
@@ -514,9 +505,6 @@ body, html {
 }
 
 
-.second-card {
-    position: relative;
-}
 
 
 
